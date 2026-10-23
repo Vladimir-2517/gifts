@@ -13,13 +13,13 @@
     padding: 40px 20px;
     color: #333;
     
-    /* 👇 НАСТРОЙКА ФОНА С БОРАТОМ 👇 */
+    /* Фон с Боратом и затемнением */
     background-image: 
-      linear-gradient(rgba(102, 126, 234, 0.85), rgba(118, 75, 162, 0.85)), /* Затемнение, чтобы читался текст */
+      linear-gradient(rgba(102, 126, 234, 0.75), rgba(118, 75, 162, 0.75)),
       url('borat.jpg');
-    background-size: cover;           /* Растянуть на весь экран */
-    background-position: center top;  /* Центрировать картинку */
-    background-attachment: fixed;     /* Картинка не двигается при скролле */
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
     background-repeat: no-repeat;
   }
 
@@ -37,23 +37,45 @@
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
 
+  /* 👇 ПРОЗРАЧНЫЕ КАРТОЧКИ 👇 */
   .card {
-    background: #fff; border-radius: 16px; overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.65); /* Белый цвет с прозрачностью 65% */
+    backdrop-filter: blur(10px);           /* Размытие фона позади карточки */
+    -webkit-backdrop-filter: blur(10px);   /* Для Safari (iPhone) */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Легкая светлая рамка */
+    border-radius: 16px; 
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     display: flex; flex-direction: column;
   }
-  .card:hover { transform: translateY(-6px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
-
-  .card .emoji { font-size: 4rem; text-align: center; padding: 30px 20px 10px; background: linear-gradient(135deg, #f6f9ff 0%, #e9efff 100%); }
-  .card .body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-  .card h3 { font-size: 1.25rem; margin-bottom: 8px; color: #333; }
-  .card .category {
-    display: inline-block; font-size: 0.75rem; background: #ede9fe; color: #6d28d9;
-    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; align-self: flex-start;
+  
+  .card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35); 
+    background: rgba(255, 255, 255, 0.8); /* При наведении становится чуть плотнее */
   }
-  .card p { font-size: 0.92rem; color: #666; line-height: 1.5; flex: 1; }
-  .card .price { margin-top: 15px; font-size: 1.1rem; font-weight: bold; color: #764ba2; }
+
+  .card .emoji { 
+    font-size: 4rem; 
+    text-align: center; 
+    padding: 30px 20px 10px; 
+    background: rgba(255, 255, 255, 0.3); /* Эмодзи-блок тоже полупрозрачный */
+  }
+  
+  .card .body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  
+  .card h3 { font-size: 1.25rem; margin-bottom: 8px; color: #111; }
+  
+  .card .category {
+    display: inline-block; font-size: 0.75rem; background: rgba(237, 233, 254, 0.8); color: #4c1d95;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; align-self: flex-start;
+    font-weight: 600;
+  }
+  
+  .card p { font-size: 0.92rem; color: #222; line-height: 1.5; flex: 1; font-weight: 500; }
+  
+  .card .price { margin-top: 15px; font-size: 1.1rem; font-weight: bold; color: #4c1d95; }
 
   .card .links { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
   .card .btn {
@@ -64,7 +86,6 @@
   }
   .card .btn:hover { opacity: 0.9; transform: scale(1.02); }
 
-  /* Футер теперь просто текст, так как фото на фоне */
   footer {
     text-align: center;
     margin-top: 50px;
