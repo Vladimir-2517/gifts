@@ -55,7 +55,26 @@
   }
   .card .btn:hover { opacity: 0.9; transform: scale(1.02); }
 
-  footer { text-align: center; color: #fff; margin-top: 50px; opacity: 0.8; font-size: 1.9rem; }
+  /* Обновленный футер с Боратом */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    color: #fff;
+    opacity: 0.9;
+  }
+  footer img {
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  footer p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
   .empty { grid-column: 1 / -1; text-align: center; color: #fff; font-size: 1.2rem; padding: 40px; }
 </style>
 </head>
@@ -76,7 +95,11 @@
 
 <div class="grid" id="grid"></div>
 
-<footer>🦂 Скорпион одобряет этот список 🎁</footer>
+<!-- Футер с Боратом -->
+<footer>
+  <img src="borat.jpg" alt="Борат">
+  <p>🦂 Скорпион одобряет этот список 🎁</p>
+</footer>
 
 <script>
   const gifts = [
@@ -112,7 +135,7 @@
       price: "от 13 452 ₽",
       links: [
         { label: "Ozon", url: "https://ozon.ru/t/4KbLf2q" },
-        { label: "bazaplay", url: "https://bazaplay.ru/catalog/samsung/samsung-galaxy-buds-4-pro-white-sm-r640/" }
+        { label: "Samsung Galaxy Buds 4 Pro", url: "https://bazaplay.ru/catalog/samsung/samsung-galaxy-buds-4-pro-white-sm-r640/" }
       ]
     },
     {
