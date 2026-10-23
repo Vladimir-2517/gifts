@@ -15,150 +15,48 @@
     color: #333;
   }
 
-  header {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 40px;
-  }
+  header { text-align: center; color: #fff; margin-bottom: 40px; }
+  header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+  header p { font-size: 1.1rem; opacity: 0.9; }
 
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  }
-
-  header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-
-  .filters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-  }
-
+  .filters { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
   .filters button {
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: all 0.3s;
+    padding: 10px 20px; border: 2px solid #fff; background: transparent;
+    color: #fff; border-radius: 30px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s;
   }
+  .filters button:hover, .filters button.active { background: #fff; color: #764ba2; }
 
-  .filters button:hover,
-  .filters button.active {
-    background: #fff;
-    color: #764ba2;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
 
   .card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
+    background: #fff; border-radius: 16px; overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
   }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 15px 40px rgba(0,0,0,0.25); }
 
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  }
-
-  .card .emoji {
-    font-size: 4rem;
-    text-align: center;
-    padding: 30px 20px 10px;
-    background: linear-gradient(135deg, #f6f9ff 0%, #e9efff 100%);
-  }
-
-  .card .body {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 8px;
-    color: #333;
-  }
-
+  .card .emoji { font-size: 4rem; text-align: center; padding: 30px 20px 10px; background: linear-gradient(135deg, #f6f9ff 0%, #e9efff 100%); }
+  .card .body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .card h3 { font-size: 1.25rem; margin-bottom: 8px; color: #333; }
   .card .category {
-    display: inline-block;
-    font-size: 0.75rem;
-    background: #ede9fe;
-    color: #6d28d9;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    align-self: flex-start;
+    display: inline-block; font-size: 0.75rem; background: #ede9fe; color: #6d28d9;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; align-self: flex-start;
   }
+  .card p { font-size: 0.92rem; color: #666; line-height: 1.5; flex: 1; }
+  .card .price { margin-top: 15px; font-size: 1.1rem; font-weight: bold; color: #764ba2; }
 
-  .card p {
-    font-size: 0.92rem;
-    color: #666;
-    line-height: 1.5;
-    flex: 1;
-  }
-
-  .card .price {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #764ba2;
-  }
-
+  .card .links { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
   .card .btn {
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-    text-decoration: none;
+    display: block; text-align: center; text-decoration: none;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    padding: 11px 18px;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: opacity 0.3s, transform 0.2s;
+    color: #fff; padding: 11px 18px; border-radius: 10px;
+    font-size: 0.95rem; font-weight: 600; transition: opacity 0.3s, transform 0.2s;
   }
+  .card .btn:hover { opacity: 0.9; transform: scale(1.02); }
 
-  .card .btn:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-  }
-
-  footer {
-    text-align: center;
-    color: #fff;
-    margin-top: 50px;
-    opacity: 0.8;
-    font-size: 1.9rem;
-  }
-
-  .empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 40px;
-  }
+  footer { text-align: center; color: #fff; margin-top: 50px; opacity: 0.8; font-size: 1.9rem; }
+  .empty { grid-column: 1 / -1; text-align: center; color: #fff; font-size: 1.2rem; padding: 40px; }
 </style>
 </head>
 <body>
@@ -212,8 +110,9 @@
       category: "tech",
       desc: "Хочу слушать музыку, а не ваш пиздёж. Подарите — и я вас не слышу.",
       price: "от 13 452 ₽",
-      link: [
-    { label: "Ozon", url: "https://ozon.ru/t/4KbLf2q" }
+      links: [
+        { label: "Ozon", url: "https://ozon.ru/t/4KbLf2q" }
+      ]
     },
     {
       emoji: "🖨",
@@ -250,18 +149,24 @@
       return;
     }
 
-    grid.innerHTML = filtered.map(g => `
-      <div class="card">
-        <div class="emoji">${g.emoji}</div>
-        <div class="body">
-          <span class="category">${labelOf(g.category)}</span>
-          <h3>${g.title}</h3>
-          <p>${g.desc}</p>
-          <div class="price">${g.price}</div>
-          <a class="btn" href="${g.link}" target="_blank" rel="noopener">Открыть →</a>
+    grid.innerHTML = filtered.map(g => {
+      const buttons = g.links
+        ? g.links.map(l => `<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label} →</a>`).join('')
+        : `<a class="btn" href="${g.link}" target="_blank" rel="noopener">Открыть →</a>`;
+
+      return `
+        <div class="card">
+          <div class="emoji">${g.emoji}</div>
+          <div class="body">
+            <span class="category">${labelOf(g.category)}</span>
+            <h3>${g.title}</h3>
+            <p>${g.desc}</p>
+            <div class="price">${g.price}</div>
+            <div class="links">${buttons}</div>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   function labelOf(cat) {
